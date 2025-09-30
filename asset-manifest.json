@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Clothing-Store-v1.3/static/css/main.4a40b951.css",
+    "main.js": "/Clothing-Store-v1.3/static/js/main.675e5321.js",
+    "index.html": "/Clothing-Store-v1.3/index.html",
+    "main.4a40b951.css.map": "/Clothing-Store-v1.3/static/css/main.4a40b951.css.map",
+    "main.675e5321.js.map": "/Clothing-Store-v1.3/static/js/main.675e5321.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a40b951.css",
+    "static/js/main.675e5321.js"
+  ]
+}
