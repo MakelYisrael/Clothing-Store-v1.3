@@ -14,7 +14,7 @@ import { Checkout } from "./components/checkout";
 import { ProductDetailModal } from "./components/product-detail-modal";
 import { UserProvider } from "./contexts/user-context";
 import { Review } from "./components/product-reviews";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 import { Toaster } from "./components/ui/sonner";
 
 // Sample reviews data
