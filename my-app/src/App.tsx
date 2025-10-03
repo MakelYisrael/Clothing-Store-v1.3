@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { ThemeProvider } from './context/theme-context';
+import { UserProvider } from './context/user-context';
+import { SellerProvider } from './context/seller-context';
 
-function App() {
+function AppInner() {
   return (
     <div className="App">
       <header className="App-header">
@@ -23,4 +26,14 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider>
+      <UserProvider>
+        <SellerProvider>
+          <AppInner />
+        </SellerProvider>
+      </UserProvider>
+    </ThemeProvider>
+  );
+}
