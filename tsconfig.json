@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": [ "dom", "dom.iterable", "esnext" ],
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": [ "components/*" ]
+    }
+  },
+  "include": [ "src/**/*" ],
+  "exclude": [ "node_modules", "src/firebaseConfig.ts" ]
+}

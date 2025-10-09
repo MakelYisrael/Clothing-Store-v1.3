@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Theme Variables --- */
+:root {
+    --font-size: 16px;
+    /* HSL triplets for Tailwind's hsl(var(--token)) colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 220 85% 55%; /* accessible blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 15%;
+    --muted: 240 10% 95%;
+    --muted-foreground: 240 5% 45%;
+    --accent: 220 10% 95%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 348 78% 47%; /* ~#d4183d */
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 84%;
+    --input: 0 0% 100%;
+    --ring: 220 85% 55%;
+    --border-light: 240 5% 90%;
+    /* Non-tailwind custom helpers */
+    --input-background: #f3f3f5;
+    --switch-background: #cbced4;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --radius: 0.625rem;
+    --sidebar: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+}
+
+:root {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+}
+
+:root {
+    --font-size: 16px;
+    /* HSL triplets for Tailwind's hsl(var(--token)) colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 220 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 15%;
+    --muted: 240 10% 95%;
+    --muted-foreground: 240 5% 45%;
+    --accent: 220 10% 95%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 348 78% 47%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 84%;
+    --input: 0 0% 100%;
+    --ring: 220 85% 55%;
+    --border-light: 240 5% 90%;
+    /* Non-tailwind custom helpers */
+    --input-background: #f3f3f5;
+    --switch-background: #cbced4;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --radius: 0.625rem;
+    --sidebar: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+}
+
+:root {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+}
+
+/* --- Dark Mode Variables --- */
+.dark {
+    --background: 220 8% 7%;
+    --foreground: 0 0% 98%;
+    --card: 220 8% 11%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 8% 10%;
+    --popover-foreground: 0 0% 98%;
+    --muted: 220 6% 20%;
+    --muted-foreground: 220 5% 65%;
+    --secondary: 220 7% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 220 7% 18%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 348 78% 47%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 6% 22%;
+    --border-light: 220 6% 28%;
+    --input: 220 6% 16%;
+    --ring: 220 85% 60%;
+    --sidebar: 220 8% 9%;
+    --sidebar-foreground: 0 0% 98%;
+    --primary: 220 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    /* Chart palette for dark mode (grey gradient) */
+    --chart-1: 0 0% 85%;
+    --chart-2: 0 0% 75%;
+    --chart-3: 0 0% 65%;
+    --chart-4: 0 0% 55%;
+    --chart-5: 0 0% 45%;
+}
+
+/* --- Base Styles --- */
+@layer base {
+    *, ::before, ::after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
+        outline: none;
+    }
+
+    html {
+        font-size: var(--font-size);
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        line-height: 1.5;
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+
+    h1, h2, h3, h4, p, label, button, input {
+        line-height: 1.5;
+        font-weight: var(--font-weight-normal);
+    }
+}
+
+/* --- Scrollbars --- */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted) transparent;
+}
+
+    *::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--muted);
+        border-radius: 4px;
+    }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: var(--muted-foreground);
+        }
+
+    /* --- Force solid backgrounds on overlays, popups, sidebars, panels --- */
+    .modal,
+    .dialog,
+    .drawer,
+    .popover,
+    .sidebar,
+    .cart-panel,
+    .wishlist-panel,
+    .login-panel {
+        background-color: var(--card) !important;
+        color: var(--card-foreground) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+
+
+
+
+/* --- Dark Mode Fix --- */
+.dark .modal,
+.dark .dialog,
+.dark .drawer,
+.dark .popover,
+.dark .sidebar,
+.dark .cart-panel,
+.dark .wishlist-panel,
+.dark .login-panel {
+    background-color: var(--card) !important;
+    color: var(--card-foreground) !important;
+}
+
+/* --- Cursor Utilities --- */
+@layer utilities {
+    .cursor-button {
+        cursor: pointer;
+        transition: transform 0.1s ease;
+    }
+
+        .cursor-button:hover {
+            transform: scale(1.02);
+        }
+
+        .cursor-button:active {
+            transform: scale(0.98);
+        }
+
+    .cursor-card {
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cursor-grab {
+        cursor: grab;
+    }
+
+        .cursor-grab:active {
+            cursor: grabbing;
+        }
+
+    .cursor-zoom {
+        cursor: zoom-in;
+    }
+
+    .cursor-link {
+        cursor: pointer;
+        position: relative;
+    }
+
+        .cursor-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .cursor-link:hover::after {
+            transform: scaleX(1);
+        }
+
+    .cursor-input {
+        cursor: text;
+    }
+
+    .cursor-disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+
+/* --- Hover & Animation Utilities --- */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+    .hover-glow:hover {
+        box-shadow: 0 0 20px rgba(3,2,19,0.2);
+    }
+
+.dark .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.hover-scale {
+    transition: transform 0.2s ease;
+}
+
+    .hover-scale:hover {
+        transform: scale(1.05);
+    }
+
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+    .hover-rotate:hover {
+        transform: rotate(2deg);
+    }
+
+/* --- Smooth Animations --- */
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+}
+
+.animate-slide-down {
+    animation: slideDown 0.4s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}

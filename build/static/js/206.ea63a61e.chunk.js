@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkjhfshop=self.webpackChunkjhfshop||[]).push([[206],{9206:(e,a,s)=>{s.d(a,{addProductReview:()=>f});var t=s(9379),c=s(5472),h=s(3858),d=s(4531),u=s(6659);async function f(e,a){await(0,c.gS)((0,c.rJ)(h.db,d.ME,e,d.Bt),(0,u.P)((0,t.A)((0,t.A)({},a),{},{createdAt:(0,c.O5)()})))}}}]);
+//# sourceMappingURL=206.ea63a61e.chunk.js.map
